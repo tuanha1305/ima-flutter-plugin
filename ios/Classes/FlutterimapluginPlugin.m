@@ -1,0 +1,15 @@
+#import "FlutterimapluginPlugin.h"
+#if __has_include(<flutterimaplugin/flutterimaplugin-Swift.h>)
+#import <flutterimaplugin/flutterimaplugin-Swift.h>
+#else
+// Support project import fallback if the generated compatibility header
+// is not copied when this plugin is created as a library.
+// https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
+#import "flutterimaplugin-Swift.h"
+#endif
+
+@implementation FlutterimapluginPlugin
++ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
+  [SwiftFlutterimapluginPlugin registerWithRegistrar:registrar];
+}
+@end
